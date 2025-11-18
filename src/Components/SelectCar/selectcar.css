@@ -1,0 +1,218 @@
+/* =========================
+   SelectCar Modern Styles
+========================= */
+/* Better, more robust @font-face definition */
+@font-face {
+  font-family: 'ClashDisplay';
+
+  src: url('../../assets/fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Crucial for performance! */
+}
+@font-face {
+  font-family: 'ClashDisplay';
+
+  src: url('../../assets/fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; /* Crucial for performance! */
+}
+
+
+/* Container */
+.selectcar-container {
+  max-width: 420px;
+  margin: 150px 150px;
+  padding: 50px 25px;
+  border: 1px solid rgb(183, 183, 183);
+  background: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ font-family: 'ClashDisplay',  sans-serif;
+  height: 500px;
+}
+
+.selectcar-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+.selectcar-container h1 {
+  color: white;
+  font-weight: 400;
+}
+
+/* Header / Title */
+.search-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-header p {
+  font-size: 0.85em;
+  color: #ffe9e9;
+  margin: 0;
+}
+
+.search-header h2 {
+  font-size: 2em;
+  color: #d96f00;
+  margin-top: 5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Form wrapper */
+.form-wrapper {
+  padding: 25px;
+  border: 2px solid #d96f00;
+  /* border-radius: 12px; */
+  background: #fffaf8;
+  box-shadow: inset 0 2px 6px rgba(217, 111, 0, 0.05);
+  font-family: 'Gambetta', Arial, sans-serif;
+}
+
+/* Dropdowns */
+.dropdown-box {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.dropdown-box select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"%3E%3Cpath fill="%23333" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dropdown-box select:focus {
+  border-color: #d96f00;
+  box-shadow: 0 0 8px rgba(217, 111, 0, 0.3);
+  outline: none;
+}
+
+/* Part Selection / Tag Input */
+.part-selection-area {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  min-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #fff7f2;
+}
+
+.part-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffe9d6;
+  border: 1px solid #f0cba0;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  color: #5a3e1b;
+  transition: background 0.2s;
+}
+
+.part-tag:hover {
+  background-color: #ffd2a8;
+}
+
+.part-tag .remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #b45f0d;
+}
+
+/* Add Part Text */
+.add-part-text {
+  color: #d96f00;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.add-part-text:hover {
+  color: #e67d22;
+}
+
+/* Condition / Radio Buttons */
+.condition-required-section h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1em;
+  color: #555;
+}
+
+.radio-group input[type='radio'] {
+  margin-right: 6px;
+  accent-color: #d96f00;
+  width: 18px;
+  height: 18px;
+}
+
+/* Final Button */
+.final-section button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 10px;
+  background-color: #d96f00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 6px 12px rgba(217, 111, 0, 0.4);
+}
+
+.final-section button:hover {
+  background-color: #e67d22;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(217, 111, 0, 0.45);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .selectcar-container {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  .form-wrapper {
+    padding: 20px;
+  }
+
+  .search-header h2 {
+    font-size: 1.6em;
+  }
+}

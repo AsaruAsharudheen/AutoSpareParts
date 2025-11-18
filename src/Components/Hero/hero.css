@@ -1,0 +1,391 @@
+/* Main container */
+
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.hero-main {
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+  padding: 100px 50px;
+  min-height: 100vh;
+  z-index: 1;
+  overflow: hidden; /* Prevent image overflow */
+}
+
+/* Left box (form / select car) */
+.left-hero-box {
+  position: relative;
+  /* So it stays above the absolute image */
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  /* background: rgba(255, 255, 255, 0.9); */
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Right hero image */
+.right-hero-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Behind content */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.right-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover entire hero section */
+  object-position: center;
+  filter: brightness(0.8); /* Optional: darken for text visibility */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-main {
+    flex-direction: column;
+    padding: 50px 20px;
+    min-height: 70vh;
+  }
+
+  .left-hero-box {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services-section {
+  background-color: #0d0d0d; /* Dark background as seen in the screenshot */
+  color: #fff; /* White text by default */
+  padding: 180px 0; /* Vertical padding for the section */
+   font-family: 'ClashDisplay',  sans-serif;
+
+}
+
+/* Optional container for max-width and centering */
+.container {
+  max-width: 1300px; /* Max width of the content */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Horizontal padding inside the container */
+}
+
+/* --- Service Header (01, 02, 03 with lines) --- */
+.service-header {
+  display: flex;
+  justify-content: space-around; /* Center the step indicators */
+  gap: 50px; /* Space between the step indicators */
+  margin-bottom: 60px; /* Space below the header */
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 35px; /* Space between number and line */
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.step-line {
+  flex-grow: 1; /* Makes the line take available space */
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.2); /* Light grey line */
+  width: 290px; /* Fixed width for the line as in the image */
+}
+
+/* --- Service Cards Grid --- */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between cards */
+  justify-content: center; /* Center cards if they don't fill the row */
+}
+
+.service-card {
+  background-color: #000000; /* Slightly lighter dark background for cards */
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+}
+
+.card-icon {
+  font-size: 48px; /* Size of the icon */
+  color: #ff4747; /* Red icon color */
+  margin-bottom: 25px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.card-description {
+  font-size: 15px;
+  color: #a0a0a0; /* Lighter grey for description text */
+  line-height: 1.6;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .service-header {
+    flex-wrap: wrap; /* Allow steps to wrap on smaller screens */
+    gap: 30px; /* Reduce gap */
+    margin-bottom: 40px;
+  }
+
+  .step-indicator {
+    justify-content: center; /* Center each step */
+    width: 100%; /* Make each step take full width if wrapped */
+  }
+
+  .step-line {
+    width: 50px; /* Shorter line on small screens */
+  }
+
+  .service-cards-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+  }
+
+  .service-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 60px 0;
+  }
+  
+  .step-number {
+    font-size: 20px;
+  }
+
+  .card-icon {
+    font-size: 40px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Main Section Styling --- */
+.choose-us-section {
+  background-color: #000; /* Pure black/very dark background */
+  color: #fff;
+  padding: 50px 0;
+  font-family: 'ClashDisplay',  sans-serif;
+
+}
+
+.choose-us-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Vertically align content */
+  gap: 50px;
+}
+
+/* --- Left Content Styles --- */
+.choose-us-content {
+  flex: 1; /* Takes up one part of the space */
+  max-width: 500px; /* Constrain width for better readability */
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.feature-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.feature-list li {
+  font-size: 19px;
+  font-weight: 600;
+  color: #bdbcbc;
+  margin-bottom: 15px;
+  position: relative;
+  letter-spacing: 2px;
+  /* Add a subtle red underline/indicator (optional but stylish) */
+  /* border-bottom: 1px solid rgba(255, 71, 71, 0.2); 
+     padding-bottom: 5px; */
+}
+
+.choose-us-button {
+  background-color: #ff4747; /* Red button color */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.choose-us-button:hover {
+  background-color: #e03c3c;
+}
+
+/* --- Right Image Box Styles --- */
+.choose-us-image-box {
+  flex: 1; /* Takes up one part of the space */
+  position: relative;
+  max-width: 550px;
+  height: 550px; /* Fixed height for visual control */
+}
+
+.main-mechanic-img {
+  width: 90%;
+  height: 99%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; 
+}
+
+/* The red border/frame behind the image */
+.choose-us-image-box::before {
+  content: '';
+  position: absolute;
+  /* Positions the red frame slightly offset (bottom right) */
+  bottom: -40px; 
+  right: -40px; 
+  width: 100%;
+  height: 100%;
+  /* background-color: #ff4747; Red color for the frame */
+  z-index: 1;
+  border-radius: 4px;
+}
+
+/* --- Circle Logo Overlay Styling --- */
+.circle-overlay-wrapper {
+  position: absolute;
+  bottom: 40px; 
+  left: -90px;
+  /* right: 10px; */
+  width: 170px; /* Size of the circular logo */
+  height: 170px;
+  border-radius: 50%;
+  z-index: 3; /* Above the image and background */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional shadow */
+}
+
+.circle-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the circle image fits */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .choose-us-container {
+    flex-direction: column; /* Stack vertically */
+    padding: 0 30px;
+    gap: 40px;
+  }
+  
+  .choose-us-content, 
+  .choose-us-image-box {
+    max-width: 100%; /* Take full width on smaller screens */
+  }
+
+  .choose-us-image-box {
+    height: 400px; /* Adjust height for smaller screens */
+    margin-top: 40px; /* Add space when stacked */
+  }
+  
+  .choose-us-image-box::before {
+    bottom: -20px; 
+    right: -20px; 
+  }
+}
+
+@media (max-width: 576px) {
+  .choose-us-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 30px;
+  }
+
+  .feature-list li {
+    font-size: 16px;
+  }
+
+  .choose-us-image-box {
+    height: 300px; 
+  }
+
+  .circle-overlay-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+}

@@ -1,0 +1,105 @@
+/* ---------- MAIN CONTAINER ---------- */
+.part-details-container {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- LEFT SIDE ---------- */
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.left-side img {
+  width: 100%;
+  height: 420px;
+  /* border-radius: 14px; */
+  object-fit: cover;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-side img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- RIGHT SIDE ---------- */
+.right-side {
+  flex: 1;
+  background: #ffffff;
+  padding: 28px;
+  /* border-radius: 14px; */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ececec;
+}
+
+.right-side h2 {
+  margin-bottom: 18px;
+  font-size: 26px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* ---------- TEXTS INSIDE RIGHT ---------- */
+.right-side p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* ---------- BUTTON STYLING ---------- */
+.right-side button {
+  background: #ff9800;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.right-side button:hover {
+  background: #e68900;
+  transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .part-details-container {
+    flex-direction: column;
+  }
+
+  .left-side img {
+    height: 350px;
+  }
+}
+
+.hero-img-part-detail {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Behind content */
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+}
+
+.hero-img-part-detail img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover; /* Cover entire hero section */
+  object-position: center;
+  filter: brightness(0.8); /* Optional: darken for text visibility */
+}

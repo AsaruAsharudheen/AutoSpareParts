@@ -1,0 +1,148 @@
+/* Define the animation for continuous left movement */
+@keyframes scrollLeft {
+    /* Starts at its original position (0) */
+    0% {
+        transform: translateX(0);
+    }
+    /* Ends by translating the width of the duplicated content (50% of the track width), 
+       creating a seamless loop */
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+/* --- Main Section Styling (Set to hide overflow) --- */
+.stats-clients-section {
+    background-color: #111;
+    color: #fff;
+    padding: 80px 0 60px 0;
+    font-family: 'ClashDisplay', sans-serif;
+    text-align: center;
+    overflow: hidden; /* HIDES the off-screen logos for the marquee effect */
+}
+
+/* --- Top Row: Statistics (No change) --- */
+.stats-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    /* padding: 0 50px; */
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 80px;
+    /* margin-left: 90px; */
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-count {
+    font-size: 60px;
+    font-weight: 800;
+    color: #ff4747;
+    margin: 0 0 10px 0;
+    line-height: 1;
+    letter-spacing: 3px;
+}
+
+.stat-label {
+    font-size: 19px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Middle Separator: Trusted Client Text (No change) --- */
+.client-container {
+    /* max-width: 1500px; */
+    margin: 0 auto;
+}
+
+.client-header {
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 50px;
+    padding-right: 90px;
+}
+
+/* New wrapper to control the visible scrolling area */
+.scrolling-logo-track {
+    max-width: 1200px; 
+    margin: 50px auto;
+    overflow: hidden; /* Ensures only logos in view are seen */
+}
+
+/* --- Bottom Row: Logos (APPLY ANIMATION HERE) --- */
+.client-logos-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    /* CRITICAL: Set width to 200% to hold both sets of duplicated logos */
+    width: 200%; 
+    
+    /* Apply the animation */
+    animation: scrollLeft 30s linear infinite; /* Adjust time for speed */
+    animation-play-state: running; 
+}
+
+.client-logos-row:hover {
+    animation-play-state: paused; /* Pause on hover for better UX */
+}
+
+/* Calculate flex-basis based on total duplicated items (7 logos * 2 = 14) */
+.client-logo-item {
+    flex-shrink: 0; /* Prevents logos from shrinking */
+    flex-basis: 7.14%; /* 100% / 14 items */
+    min-width: 100px;
+    opacity: 0.8; 
+    transition: opacity 0.3s ease;
+    padding: 10px;
+}
+
+.client-logo-item:hover {
+    opacity: 1;
+}
+
+.client-logo-img {
+    width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0.8);
+}
+
+.logo-text {
+    display: none; 
+}
+
+/* --- Responsive Adjustments --- */
+/* Media queries for the stats row remain the same */
+@media (max-width: 768px) {
+    .stats-row {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .stat-count {
+        font-size: 40px;
+    }
+    /* Logo sizing is handled by flex-basis and animation, 
+       so previous media queries for logo sizing are generally removed/superseded. */
+}
+
+@media (max-width: 480px) {
+    .stats-clients-section {
+        padding: 60px 0 40px 0;
+    }
+    /* Logo appearance is already handled by the animation setup */
+}

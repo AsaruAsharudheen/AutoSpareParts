@@ -1,0 +1,226 @@
+/* --- Main Section Styling --- */
+.testimonial-section {
+  background-color: #111; /* Dark background */
+  color: #fff;
+  padding: 100px 0;
+    font-family: 'ClashDisplay',  sans-serif;
+
+  position: relative;
+}
+
+.testimonial-header-container {
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Align title and arrows to the bottom */
+  position: relative;
+}
+
+/* --- Header & Title --- */
+.testimonial-title-group {
+  position: relative;
+  text-align: left;
+  z-index: 2;
+}
+
+.testimonial-main-title {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.testimonial-ghost-text {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 90px; /* Very large ghost text */
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05); /* Very light, transparent text */
+  white-space: nowrap;
+  letter-spacing: 5px;
+  pointer-events: none; /* Allows clicks to pass through */
+  transform: translateX(-50px);
+}
+
+/* --- Navigation Arrows --- */
+.testimonial-nav-arrows {
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.nav-arrow {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-arrow:hover {
+  background-color: #ff4747;
+  border-color: #ff4747;
+}
+
+/* --- Testimonial Card --- */
+.testimonial-card {
+  max-width: 1400px;
+  margin: 90px auto;
+  padding: 0 50px;
+  display: flex;
+  background-color: #000; /* Pure black background for the card */
+  border-radius: 8px;
+  overflow: hidden; /* Important for containing the image wrapper */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Left Side: Content */
+.testimonial-content-box {
+  flex: 1;
+  padding: 50px 60px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.customer-info {
+  margin-bottom: 30px;
+}
+
+.customer-name {
+  font-size: 28px;
+  /* font-weight: bold; */
+  font-weight: 400;
+  margin: 0;
+}
+
+.customer-location {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin: 5px 0 0 0;
+  padding-top: 5px;
+}
+
+.quote-text-container {
+  position: relative;
+  padding-left: 20px; /* Space for the large quote marks */
+}
+
+.quote-marks {
+  color: #ff4747; /* Red color for the quote marks */
+  font-size: 150px;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  line-height: 0.5;
+  font-style: italic;
+
+}
+
+.quote-text {
+  font-size: 19px;
+  color: #fff;
+  line-height: 1.7;
+  font-style: italic;
+  margin-top: 40px;
+  width: 500px;
+}
+
+
+/* Right Side: Image and Shape */
+.customer-image-wrapper {
+  flex: 0 0 400px; /* Fixed width for the image side */
+  position: relative;
+  overflow: hidden;
+}
+
+.customer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* The Angled Red Background Shape */
+.customer-image-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7a2323; /* Darker red/maroon as seen in the screenshot */
+  z-index: 1;
+  
+  /* Create the diagonal cut effect using clip-path */
+  clip-path: polygon(
+    0 50%,     /* Top left corner of the red block */
+    50% 100%,  /* Bottom left corner of the red block (cut-out) */
+    100% 100%, /* Bottom right corner */
+    100% 0    /* Top right corner */
+  );
+  
+  /* Refinement for the specific diagonal block under the guy's arm/side */
+  /* This is a more complex geometry but yields a better visual match */
+  transform: skewY(15deg); /* Skew the element */
+  transform-origin: bottom right; /* Pin the transformation to the bottom right */
+  width: 120%; /* Extend to cover full area after skew */
+  height: 70%; /* Only cover the bottom portion */
+  right: -20%;
+  bottom: -20%;
+  clip-path: none; /* Disable clip-path if using skew/transform */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .testimonial-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-nav-arrows {
+    margin-top: 20px;
+  }
+  
+  .testimonial-ghost-text {
+    font-size: 70px;
+    top: 10px;
+  }
+  
+  .testimonial-card {
+    flex-direction: column;
+  }
+
+  .testimonial-content-box {
+    padding: 40px 30px;
+  }
+  
+  .customer-image-wrapper {
+    flex: 1;
+    height: 350px;
+    width: 100%;
+  }
+
+  /* Reset skewed background for mobile for cleaner look */
+  .customer-image-wrapper::before {
+    display: none; 
+  }
+}
