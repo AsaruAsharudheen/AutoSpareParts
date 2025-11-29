@@ -1,391 +1,292 @@
-/* Main container */
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../../assets/fonts/Quicksand-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Technor';
+  src: url('../../assets/fonts/Technor-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-
-*{
+* {
+  font-family: 'Technor';
   margin: 0;
-  box-sizing: border-box;
 }
 
-
-.hero-main {
+.hero-container {
+  width: 100%;
+  height: 100vh;
   position: relative;
   display: flex;
-  /* align-items: center; */
-  justify-content: flex-start;
-  padding: 100px 50px;
-  min-height: 100vh;
-  z-index: 1;
-  overflow: hidden; /* Prevent image overflow */
+  align-items: center;
+  background: url('/hero_slider_bg_2.png') center/cover no-repeat;
+  overflow: hidden;
 }
 
-/* Left box (form / select car) */
-.left-hero-box {
-  position: relative;
-  /* So it stays above the absolute image */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  left: 80px;
   z-index: 2;
-  max-width: 900px;
-  width: 100%;
-  /* background: rgba(255, 255, 255, 0.9); */
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Right hero image */
-.right-hero-img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0; /* Behind content */
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.right-hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover entire hero section */
-  object-position: center;
-  filter: brightness(0.8); /* Optional: darken for text visibility */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-main {
-    flex-direction: column;
-    padding: 50px 20px;
-    min-height: 70vh;
-  }
-
-  .left-hero-box {
-    width: 100%;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.services-section {
-  background-color: #0d0d0d; /* Dark background as seen in the screenshot */
-  color: #fff; /* White text by default */
-  padding: 180px 0; /* Vertical padding for the section */
-   font-family: 'ClashDisplay',  sans-serif;
-
-}
-
-/* Optional container for max-width and centering */
-.container {
-  max-width: 1300px; /* Max width of the content */
-  margin: 0 auto; /* Center the container */
-  padding: 0 20px; /* Horizontal padding inside the container */
-}
-
-/* --- Service Header (01, 02, 03 with lines) --- */
-.service-header {
-  display: flex;
-  justify-content: space-around; /* Center the step indicators */
-  gap: 50px; /* Space between the step indicators */
-  margin-bottom: 60px; /* Space below the header */
-}
-
-.step-indicator {
-  display: flex;
-  align-items: center;
-  gap: 35px; /* Space between number and line */
-}
-
-.step-number {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.step-line {
-  flex-grow: 1; /* Makes the line take available space */
-  border: none;
-  border-top: 2px solid rgba(255, 255, 255, 0.2); /* Light grey line */
-  width: 290px; /* Fixed width for the line as in the image */
-}
-
-/* --- Service Cards Grid --- */
-.service-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 30px; /* Space between cards */
-  justify-content: center; /* Center cards if they don't fill the row */
-}
-
-.service-card {
-  background-color: #000000; /* Slightly lighter dark background for cards */
-  padding: 40px;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.service-card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-}
-
-.card-icon {
-  font-size: 48px; /* Size of the icon */
-  color: #ff4747; /* Red icon color */
-  margin-bottom: 25px;
-}
-
-.card-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-.card-description {
-  font-size: 15px;
-  color: #a0a0a0; /* Lighter grey for description text */
-  line-height: 1.6;
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-  .service-header {
-    flex-wrap: wrap; /* Allow steps to wrap on smaller screens */
-    gap: 30px; /* Reduce gap */
-    margin-bottom: 40px;
-  }
-
-  .step-indicator {
-    justify-content: center; /* Center each step */
-    width: 100%; /* Make each step take full width if wrapped */
-  }
-
-  .step-line {
-    width: 50px; /* Shorter line on small screens */
-  }
-
-  .service-cards-grid {
-    grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
-  }
-
-  .service-card {
-    padding: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-section {
-    padding: 60px 0;
-  }
-  
-  .step-number {
-    font-size: 20px;
-  }
-
-  .card-icon {
-    font-size: 40px;
-  }
-
-  .card-title {
-    font-size: 18px;
-  }
-
-  .card-description {
-    font-size: 14px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* --- Main Section Styling --- */
-.choose-us-section {
-  background-color: #000; /* Pure black/very dark background */
-  color: #fff;
-  padding: 50px 0;
-  font-family: 'ClashDisplay',  sans-serif;
-
-}
-
-.choose-us-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Vertically align content */
-  gap: 50px;
-}
-
-/* --- Left Content Styles --- */
-.choose-us-content {
-  flex: 1; /* Takes up one part of the space */
-  max-width: 500px; /* Constrain width for better readability */
-}
-
-.section-title {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 20px;
   color: white;
+  max-width: 600px;
+  padding-top: 10px;
 }
 
-.section-description {
+.hero-top-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 16px;
-  color: #a0a0a0;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-.feature-list {
-  list-style: none; /* Remove default bullet points */
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.feature-list li {
-  font-size: 19px;
-  font-weight: 600;
-  color: #bdbcbc;
-  margin-bottom: 15px;
-  position: relative;
   letter-spacing: 2px;
-  /* Add a subtle red underline/indicator (optional but stylish) */
-  /* border-bottom: 1px solid rgba(255, 71, 71, 0.2); 
-     padding-bottom: 5px; */
-}
-
-.choose-us-button {
-  background-color: #ff4747; /* Red button color */
   color: white;
-  border: none;
-  padding: 12px 30px;
+  opacity: 0.9;
+  padding-left: 90px;
+  margin-bottom: 30px;
+}
+
+.hero-top-text .line {
+  width: 35px;
+  height: 2px;
+  background: white;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-size: 68px;
+  font-weight: 700;
+  width: 950px;
+  line-height: 1.1;
+  color: white;
+  padding-left: 90px;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+.hero-subtext {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+  padding-left: 90px;
+  width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 40px;
+  margin-left: 90px;
+}
+
+.learn-more-btn {
+  background: #e4002b;
+  color: white;
+  padding: 14px 30px;
   font-size: 16px;
-  font-weight: bold;
+  border-radius: 6px;
+  border: none;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
-.choose-us-button:hover {
-  background-color: #e03c3c;
+.learn-more-btn:hover {
+  background: #b80022;
 }
 
-/* --- Right Image Box Styles --- */
-.choose-us-image-box {
-  flex: 1; /* Takes up one part of the space */
-  position: relative;
-  max-width: 550px;
-  height: 550px; /* Fixed height for visual control */
+.call-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.main-mechanic-img {
-  width: 90%;
-  height: 99%;
-  object-fit: cover;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2; 
-}
-
-/* The red border/frame behind the image */
-.choose-us-image-box::before {
-  content: '';
-  position: absolute;
-  /* Positions the red frame slightly offset (bottom right) */
-  bottom: -40px; 
-  right: -40px; 
-  width: 100%;
-  height: 100%;
-  /* background-color: #ff4747; Red color for the frame */
-  z-index: 1;
-  border-radius: 4px;
-}
-
-/* --- Circle Logo Overlay Styling --- */
-.circle-overlay-wrapper {
-  position: absolute;
-  bottom: 40px; 
-  left: -90px;
-  /* right: 10px; */
-  width: 170px; /* Size of the circular logo */
-  height: 170px;
+.call-icon {
+  background: #e4002b;
+  padding: 12px;
   border-radius: 50%;
-  z-index: 3; /* Above the image and background */
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional shadow */
+  font-size: 20px;
 }
 
-.circle-logo-img {
-  width: 100%;
+.call-info .call-text {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.call-info .call-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
   height: 100%;
-  object-fit: contain; /* Ensure the circle image fits */
+  background: url('/mechanic.jpg') center/cover no-repeat;
+  z-index: 0;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 992px) {
-  .choose-us-container {
-    flex-direction: column; /* Stack vertically */
-    padding: 0 30px;
-    gap: 40px;
-  }
+.selectcar-box {
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  z-index: 10;
+  width: 790px; /* adjust as needed */
+  padding: 20px;
+  /* background: rgba(0, 0, 0, 0.4);  */
+  border-radius: 10px;
+  /* backdrop-filter: blur(5px); */
   
-  .choose-us-content, 
-  .choose-us-image-box {
-    max-width: 100%; /* Take full width on smaller screens */
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= HERO MOBILE RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .hero-container {
+    height: 130vh;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
   }
 
-  .choose-us-image-box {
-    height: 400px; /* Adjust height for smaller screens */
-    margin-top: 40px; /* Add space when stacked */
+  /* Strong overlay for readability */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.3)
+    );
   }
-  
-  .choose-us-image-box::before {
-    bottom: -20px; 
-    right: -20px; 
+
+  /* Center content */
+  .hero-content {
+    position: relative;
+    left: 0;
+    max-width: 90%;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 120px;
+    text-align: center;
+  }
+
+  .hero-top-text {
+    justify-content: center;
+    padding-left: 0;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .hero-subtext {
+    width: 100%;
+    padding-left: 0;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  /* Buttons stack */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin: 25px auto 0;
+    gap: 18px;
+  }
+
+  .learn-more-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .call-box {
+    justify-content: center;
+  }
+
+  /* Hide right hero image */
+  .hero-image {
+    display: none;
+  }
+
+  /* SelectCar moves below content */
+  .selectcar-box {
+    position: relative;
+    right: auto;
+    top:0px;
+    width: 100%;
+    margin-top: 5px;
+    /* padding: 0 10px; */
+    padding-left: 30px;
   }
 }
 
-@media (max-width: 576px) {
-  .choose-us-section {
-    padding: 60px 0;
-  }
-  
-  .section-title {
-    font-size: 30px;
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .hero-title {
+    font-size: 28px;
   }
 
-  .feature-list li {
+  .hero-subtext {
+    font-size: 15px;
+  }
+
+  .learn-more-btn {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+
+  .call-info .call-number {
     font-size: 16px;
   }
-
-  .choose-us-image-box {
-    height: 300px; 
-  }
-
-  .circle-overlay-wrapper {
-    width: 90px;
-    height: 90px;
-  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

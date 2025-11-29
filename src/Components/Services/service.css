@@ -1,242 +1,312 @@
-.dedicated-services-section {
-  background-color: #111; /* Very dark background */
-  color: #fff;
-  padding: 100px 0;
-   font-family: 'ClashDisplay',  sans-serif;
+/* Top heading */
+.services-wrapper {
+  padding: 120px 0;
+  text-align: center;
+  font-family: 'Quicksand';
 
-  position: relative;
-}
-
-.services-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 50px;
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-
-/* --- Left Column: Introduction --- */
-.services-intro {
-  flex: 1;
-  max-width: 45%;
-  padding-top: 50px;
-}
-
-.intro-title-line1 {
-  font-size: 45px;
-  font-weight: 900;
-  line-height: 0.9;
-  margin: 0;
-  color: white;
-  padding-bottom: 10px;
-}
-
-.intro-title-line2 {
-  font-size: 45px;
-  font-weight: 900;
-  line-height: 0.9;
-  margin: 0 0 30px 0;
-  color: white;
+  margin-top: 10px;
+  height: 75vh;
+  width: 1845px;
+  margin: auto;
 
 }
 
-.intro-description {
-  font-size: 16px;
-  color: #a0a0a0;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  width: 500px;
-
-}
-
-.view-all-button {
-  display: inline-block;
-  color: #ff4747;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  position: relative;
-  padding-bottom: 5px; /* Add padding for the underline effect */
-}
-
-.view-all-button::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0; /* Position underline correctly */
-  width: 100%;
-  height: 2px;
-  background-color: #ff4747;
-  transition: width 0.3s ease-in-out; /* Smooth transition */
-}
-
-.view-all-button:hover::after {
-  width: 0;
-}
-
-
-/* --- Right Column: Service List --- */
-.services-list {
-  flex: 1;
-  max-width: 55%;
-  margin-top: 50px;
-}
-
-.service-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 50px;
-  gap: 30px;
-}
-
-.service-image-box {
-  width: 300px;
-  height: 300px;
-  overflow: hidden; /* Crucial for zoom effect to stay within bounds */
-  flex-shrink: 0;
-  position: relative; /* For potential overlay effects */
-}
-
-.service-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease-in-out; /* Smooth zoom transition */
-}
-
-/* Image Zoom Effect */
-.service-image-box:hover .service-image {
-  transform: scale(1.1); /* Zoom in by 10% */
-}
-
-.service-content {
-  padding-top: 60px;
-}
-
-.service-title {
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-.service-description {
-  font-size: 16px;
-  color: #a0a0a0;
-  margin-bottom: 15px;
-  line-height: 1.5;
- 
-}
-
-/* "View More" button styling */
-.view-more-link {
-  display: inline-block; /* Make it block-level for padding/margins */
-  color: #ff4747;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 5px 10px; /* Add padding to make it feel like a button */
-  border: 1px solid #ff4747; /* Initial border */
-  border-radius: 4px; /* Slightly rounded corners */
-  transition: all 0.3s ease-in-out; /* Smooth transitions for all properties */
-}
-
-.view-more-link:hover {
-  background-color: #ff4747; /* Fill with red on hover */
-  color: #fff; /* White text on hover */
-  border-color: #ff4747; /* Keep border red */
-}
-
-/* --- Scroll-to-Top Button --- */
-.scroll-top-button {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 45px; /* Slightly larger */
-  height: 45px;
-  background-color: #ff4747;
-  color: white;
+.service-topline {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px; /* Larger arrow */
-  text-decoration: none;
-  border-radius: 50%; /* Make it a circle */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  z-index: 100;
-  opacity: 0.9; /* Slightly transparent by default */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  gap: 14px;
+  font-size: 14px;
+  color: #ff4747;
+  font-weight: 600;
 }
 
-.scroll-top-button:hover {
-  background-color: #e03c3c; /* Slightly darker red on hover */
-  transform: translateY(-3px); /* Lift up slightly */
-  opacity: 1; /* Fully opaque on hover */
+.service-topline span {
+  width: 50px;
+  height: 2px;
+  background: #ff4747;
+  display: inline-block;
 }
 
-.scroll-top-button .arrow-up {
-  transform: translateY(2px); /* Adjust arrow position if needed */
+.service-heading {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  /* margin: 15px 0 60px 0; */
+  margin: 20px;
+  color: #111;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 992px) {
-  .services-container {
-    flex-direction: column;
-    padding: 0 30px;
-    gap: 40px; /* Adjusted gap for better spacing */
-  }
-  
-  .services-intro,
-  .services-list {
-    max-width: 100%;
-  }
-  
-  .services-intro {
-    padding-top: 0;
-    margin-bottom: 30px; /* Reduced margin */
-  }
-
-  .intro-title-line1 {
-    font-size: 35px;
-  }
-
-  .intro-title-line2 {
-    font-size: 60px;
-  }
+/* Grid */
+.services-grid {
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
-@media (max-width: 576px) {
-  .intro-title-line1 {
-    font-size: 28px;
+/* Card Base */
+.service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Image */
+.service-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* Bottom Text (default visible) */
+.service-title-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.service-title-bar h3 {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+/* Hover Layer */
+.service-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+}
+
+/* Icon */
+.service-icon {
+  width: 65px;
+  height: 65px;
+  background: #ff4747;
+  border-radius: 12px;
+  color: white;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effects */
+.service-card:hover .service-img {
+  transform: scale(1.08);
+  filter: brightness(55%);
+}
+
+.service-card:hover .service-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover .service-title-bar {
+  opacity: 0;
+}
+
+/* Hide hover layer until hover */
+.service-hover {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 25px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  opacity: 0;
+  transition: 0.4s ease;
+  pointer-events: none;
+  width: 95%;
+}
+
+/* Show hover layer when card hovered */
+.service-card:hover .service-hover {
+  opacity: 1;
+}
+
+/* Remove default title bar on hover */
+.service-card:hover .service-title-bar {
+  opacity: 0;
+}
+
+/* Element animation inside hover */
+.service-hover .service-icon,
+.service-hover h3,
+.service-hover p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.45s ease;
+}
+
+/* Activate animations */
+.service-card:hover .service-hover .service-icon {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.05s;
+}
+
+.service-card:hover .service-hover h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.service-card:hover .service-hover p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+
+  /* Corrected styling */
+  color: antiquewhite;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: left;
+  padding-right: 20px;
+  padding-bottom: 70px;
+  /* width: 300px; */
+  width: 90%;
+}
+
+/* Title styling on hover */
+.service-card:hover .service-hover h3 {
+  color: white !important;
+  font-size: 24px;
+  text-align: left;
+}
+
+/* Icon */
+.service-icon {
+  width: 65px;
+  height: 65px;
+  background: #ff4747;
+  border-radius: 12px;
+  color: white;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= SERVICES MOBILE (DESKTOP HOVER STYLE) ================= */
+
+@media (max-width: 900px) {
+
+  .services-wrapper {
+    width: 90%;
+    height: auto;
+    padding: 60px 20px;
   }
 
-  .intro-title-line2 {
-    font-size: 45px;
-    margin-bottom: 20px;
+  .service-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
   }
-  
-  .service-item {
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 40px; /* Adjusted margin */
-  }
-  
-  .service-image-box {
+
+  /* GRID */
+  .services-grid {
     width: 100%;
-    height: 200px; /* Consistent height for mobile images */
-  }
-  
-  .service-image {
-    height: 100%; /* Ensure image fills the box */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
 
-  .scroll-top-button {
-    width: 38px;
-    height: 38px;
+  .service-img {
+    height: 300px;
+  }
+
+  /* KEEP DESKTOP HOVER LOOK */
+  .service-hover {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  .service-card:hover .service-hover,
+  .service-card:active .service-hover {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-card:hover .service-img,
+  .service-card:active .service-img {
+    transform: scale(1.08);
+    filter: brightness(55%);
+  }
+
+  .service-card:hover .service-title-bar,
+  .service-card:active .service-title-bar {
+    opacity: 0;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-heading {
+    font-size: 26px;
+  }
+
+  .service-img {
+    height: 260px;
+  }
+
+  .service-hover p {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 40px;
+  }
+
+  .service-hover h3 {
     font-size: 20px;
-    bottom: 20px;
-    right: 20px;
+  }
+
+  .service-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
   }
 }

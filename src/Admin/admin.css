@@ -1,0 +1,233 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= LOGIN ================= */
+.admin-login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1c1c1c, #000);
+  color: #fff;
+}
+
+.admin-login h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.admin-login input {
+  width: 280px;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  background: #1f1f1f;
+  color: #fff;
+  outline: none;
+}
+
+.admin-login input::placeholder {
+  color: #888;
+}
+
+.admin-login button {
+  width: 280px;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, gold, #c99236);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-login button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201, 146, 54, 0.4);
+}
+
+/* ================= LAYOUT ================= */
+.admin-wrapper {
+  display: flex;
+  height: 100vh;
+  background: #0f0f0f;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #1c1c1c, #111);
+  padding: 25px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.sidebar button {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  background: #2e2e2e;
+  transform: translateX(4px);
+}
+
+.sidebar .logout {
+  background: linear-gradient(135deg, #8b0000, #b30000);
+  margin-top: auto;
+}
+
+.sidebar .logout:hover {
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.3);
+}
+
+/* ================= MAIN ================= */
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  color: white;
+  overflow-y: auto;
+}
+
+/* ================= CONTAINER ================= */
+.admin-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ================= FORM ================= */
+.form-box {
+  display: grid;
+  gap: 12px;
+  background: #141414;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.form-box input,
+.form-box textarea,
+.form-box select {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #1f1f1f;
+  color: #fff;
+  outline: none;
+}
+
+.form-box textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.form-box button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, gold, #c99236);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(201, 146, 54, 0.4);
+}
+
+/* ================= LIST ================= */
+.list-box {
+  margin-top: 30px;
+  display: grid;
+  gap: 14px;
+}
+
+.list-card {
+  background: linear-gradient(135deg, #1b1b1b, #101010);
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.list-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* ================= LIST LEFT ================= */
+.list-left {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.admin-thumb {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid gold;
+}
+
+.location {
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+/* ================= ACTIONS ================= */
+.actions button {
+  margin-left: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #2a2a2a;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #444;
+}
+
+.actions button:nth-child(2) {
+  background: #444;
+}
+
+.actions button:nth-child(3) {
+  background: #8b0000;
+}
+
+.actions button:nth-child(3):hover {
+  background: #b30000;
+}

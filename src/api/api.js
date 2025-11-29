@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost/autospareparts/api/",
+  baseURL: "https://autoteileusedparts.com/api/",
 });

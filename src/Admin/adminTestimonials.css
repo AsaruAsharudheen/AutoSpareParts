@@ -1,0 +1,76 @@
+.admin-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.form-box {
+  display: grid;
+  gap: 10px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-box input,
+.form-box textarea,
+.form-box select {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.form-box button {
+  background: gold;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.list-box {
+  margin-top: 30px;
+  display: grid;
+  gap: 12px;
+}
+
+.list-card {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.actions button {
+  margin-left: 6px;
+}
+.list-left {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.list-left {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.location {
+  font-size: 13px;
+  color: #aaa;
+}

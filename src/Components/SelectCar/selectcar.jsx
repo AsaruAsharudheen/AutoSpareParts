@@ -119,8 +119,8 @@ const SelectCar = () => {
 
   return (
     <div className="selectcar-container">
-      <h1>Search Your Parts Here</h1>
-
+      <h1>Search your parts here</h1>
+<div className="input-boxes-5">
       {/* Make Dropdown */}
       <div className="dropdown-box">
         <select
@@ -187,6 +187,7 @@ const SelectCar = () => {
             </option>
           ))}
         </select>
+      </div>
       </div>
 
       {/* Button */}

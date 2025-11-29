@@ -1,69 +1,71 @@
 import React from 'react';
 import './service.css';
+import { Link } from 'react-router-dom';
 
 const servicesData = [
   {
-    id: 1,
-    title: 'PERFORMANCE UPGRADES AND CUSTOMIZATION',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan.",
-    imagePath: '/service_1.webp' // Placeholder path for the top image
+    title: 'Mechanic Masters',
+    img: '/service-1.jpg',
+    icon: '🚗',
+    desc: 'Customer satisfaction is crucial for business as it leads to customer loyalty.',
   },
   {
-    id: 2,
-    title: 'PERFORMANCE UPGRADES AND CUSTOMIZATION',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan.",
-    imagePath: '/service_2.webp' // Placeholder path for the middle image
+    title: 'Speedy Auto Repair',
+    img: '/service-2.jpg',
+    icon: '🔧',
+    desc: 'Fast and reliable automotive repair services with expert technicians.',
   },
   {
-    id: 3,
-    title: 'PERFORMANCE UPGRADES AND CUSTOMIZATION',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan.",
-    imagePath: '/service_3.webp' // Placeholder path for the bottom image
-  }
+    title: 'Precision Auto Works',
+    img: '/service-3.jpg',
+    icon: '🛠️',
+    desc: 'High precision repair services with modern diagnostic systems.',
+  },
 ];
 
-const DedicatedServices = () => {
+const Services = () => {
   return (
-    <section className="dedicated-services-section">
-      <div className="services-container">
-        {/* --- Left Column: Introduction --- */}
-        <div className="services-intro">
-          <h2 className="intro-title-line1">DEDICATED</h2>
-          <h2 className="intro-title-line2">SERVICES</h2>
-          
-          <p className="intro-description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's stan. Lorem Ipsum is simply dummy text of the 
-            printing and typesetting industry. Lorem Ipsum.
-          </p>
-          
-          <a href="#all-services" className="view-all-button">VIEW ALL SERVICES</a>
-        </div>
+    <div className="services-wrapper" id="service">
+      <p className="service-topline">
+        <span></span> OUR SERVICES <span></span>
+      </p>
 
-        {/* --- Right Column: Service List --- */}
-        <div className="services-list">
-          {servicesData.map((service, index) => (
-            <div className="service-item" key={service.id}>
-              {/* Image Column */}
-              <div className="service-image-box">
-                <img src={service.imagePath} alt={`Service ${service.id}`} className="service-image" />
+      <h2 className="service-heading">
+        Trusted Car Repair the
+        <br /> Professionals
+      </h2>
+      <p className="gallery-subtext">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam
+      </p>
+      <div className="services-grid">
+        {servicesData.map((item, i) => (
+          <Link
+            to={`/service-details/${i}`}
+            key={i}
+            className="service-page-link"
+          >
+            <div className="service-card" key={i}>
+              <img src={item.img} className="service-img" alt={item.title} />
+
+              {/* Hover Content */}
+              <div className="service-hover">
+                <div className="service-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
               </div>
 
-              {/* Text Content Column */}
-              <div className="service-content">
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-description">{service.description}</p>
-                <a href={`#service-${service.id}`} className="view-more-link">VIEW MORE</a>
+              {/* Bottom Title (when not hovered) */}
+              <div className="service-title-bar">
+                <h3>{item.title}</h3>
               </div>
             </div>
-          ))}
-        </div>
+          </Link>
+        ))}
       </div>
-      
-      {/* Scroll-to-top button (if desired) */}
-
-    </section>
+    </div>
   );
 };
 
-export default DedicatedServices;
+export default Services;

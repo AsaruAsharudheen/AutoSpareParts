@@ -1,0 +1,324 @@
+/* ================= HERO SECTION ================= */
+
+.service-page-hero {
+  width: 100%;
+  height: 65vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.service-page-hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.55);
+}
+
+.service-page-hero-content {
+  position: relative;
+  z-index: 2;
+  /* padding-left: 90px; */
+  color: white;
+  animation: fadeInUp 1.2s ease;
+}
+
+.service-page-hero-content h1 {
+  font-size: 55px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  padding-left: 165px;
+
+ 
+}
+
+.service-page-hero-content p {
+  color: #ddd;
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 550px;
+  padding-left: 165px;
+ 
+
+}
+
+/* ================= SERVICES WRAPPER ================= */
+
+.service-page-wrapper {
+  padding: 60px 90px;
+  animation: slideUp 1.4s ease;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  
+  .service-page-hero-content {
+    padding-left: 20px;
+  }
+
+  .service-page-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .service-page-wrapper {
+    padding: 40px 20px;
+  }
+}
+
+
+
+
+
+
+/* ========================= WRAPPER ========================= */
+
+.service-page-wrapper {
+  width: 1570px;
+  margin: auto;
+  text-align: center;
+  padding: 70px 90px;
+  /* background: #f8f8f8; */
+}
+
+/* ========================= TOPLINE ========================= */
+
+.service-page-topline {
+  font-weight: 600;
+  color: #d10000;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.service-page-topline span {
+  width: 40px;
+  height: 2px;
+  background: #d10000;
+}
+
+/* ========================= HEADING ========================= */
+
+.service-page-heading {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.service-page-subtext {
+  width: 60%;
+  margin: auto;
+  color: #555;
+  font-size: 17px;
+}
+
+/* ========================= GRID ========================= */
+
+.service-page-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-bottom: 10px;
+
+}
+
+/* ========================= CARD ========================= */
+
+.service-page-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.service-page-card:hover {
+  transform: scale(1.04);
+}
+
+/* Card Image */
+.service-page-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.service-page-card:hover .service-page-img {
+  transform: scale(1.15) rotate(3deg);
+}
+
+/* ========================= HOVER LAYER ========================= */
+
+.service-page-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  padding: 20px;
+  transition: .4s ease;
+}
+
+.service-page-card:hover .service-page-hover {
+  opacity: 1;
+}
+
+.service-page-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* ========================= TITLE BAR ========================= */
+
+.service-page-title-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  padding: 12px 0;
+  color: white;
+  text-align: center;
+  transition: .3s ease;
+}
+
+.service-page-title-bar h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Hide title bar on hover */
+.service-page-card:hover .service-page-title-bar {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= MOBILE FIX (DO NOT TOUCH DESKTOP) ================= */
+
+@media (max-width: 900px) {
+
+  /* HERO SECTION */
+  .service-page-hero {
+    height: 55vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .service-page-hero-content {
+    padding: 0 20px;
+  }
+
+  .service-page-hero-content h1 {
+    font-size: 34px;
+    padding-left: 0;   /* remove desktop offset */
+  }
+
+  .service-page-hero-content p {
+    font-size: 16px;
+    padding-left: 0;   /* remove desktop offset */
+    margin: 10px auto 0;
+  }
+
+  /* MAIN WRAPPER */
+  .service-page-wrapper {
+    width: 100%;      /* fix horizontal scroll */
+    padding: 50px 0px;
+  }
+
+  /* GRID */
+  .service-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .service-page-subtext {
+    width: 85%;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .service-page-hero {
+    height: 50vh;
+  }
+
+  .service-page-hero-content h1 {
+    font-size: 28px;
+  }
+
+  .service-page-heading {
+    font-size: 26px;
+  }
+
+  .service-page-subtext {
+    width: 100%;
+    font-size: 15px;
+  }
+  .service-page-card{
+    width: 95%;
+    padding-left: 9px;
+    border-radius: 0px;
+  }
+
+  .service-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-page-img {
+    height: 250px;
+  }
+}

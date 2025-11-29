@@ -1,0 +1,150 @@
+/* HERO IMAGE */
+.service-details-hero {
+  width: 100%;
+  height: 55vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.service-details-hero::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backdrop-filter: brightness(0.55);
+}
+
+.service-details-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.service-details-hero-content h1 {
+  font-size: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding-left: 150px;
+}
+
+/* MAIN CONTENT */
+.service-details-container {
+  padding: 60px 90px;
+  width: 1580px;
+  margin: auto;
+}
+.service-details-container h1{
+  padding-left: 5px;
+    font-size: 50px;
+    /* padding-bottom: 25px; */
+}
+
+.service-details-desc {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  padding-left: 5px;
+
+}
+.service-detail-page-image{
+    display: flex;
+    width: 1565px;
+  padding-left: 10px;
+
+    /* justify-content: space-around; */
+    gap: 90px;
+    
+}
+
+.service-details-img {
+  height: 400px;
+  width: 790px;
+  /* border-radius: 18px; */
+  margin: 20px 0;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+/* ================= SERVICE DETAILS MOBILE ONLY ================= */
+
+@media (max-width: 900px) {
+
+  /* HERO */
+  .service-details-hero {
+    height: 45vh;
+  }
+
+  .service-details-hero-content {
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .service-details-hero-content h1 {
+    font-size: 32px;
+    padding-left: 0; /* remove desktop offset */
+  }
+
+  /* CONTENT CONTAINER */
+  .service-details-container {
+    width: 90%;
+    padding: 40px 0px;
+  }
+
+  .service-details-container h1 {
+    font-size: 34px;
+    padding-left: 0;
+  }
+
+  .service-details-desc {
+    font-size: 16px;
+    /* padding-left: 0; */
+    margin-top: 25px;
+    width: 90%;
+  }
+
+  /* IMAGES */
+  .service-detail-page-image {
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 0;
+  }
+
+  .service-details-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .service-details-hero {
+    height: 40vh;
+  }
+
+  .service-details-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .service-details-container h1 {
+    font-size: 28px;
+  }
+
+  .service-details-desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}

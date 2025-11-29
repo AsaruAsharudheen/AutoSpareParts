@@ -1,54 +1,85 @@
+import React, { useEffect, useState } from 'react';
 import './navbar.css';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaPhoneAlt, FaBars, FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [sticky, setSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Sticky navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    setMenuOpen(false); // close mobile menu
+  };
+
   return (
     <>
-      {/* Top Navbar Section */}
-      <div className="navbar-top-wrapper">
+      {/* Navbar */}
+      <div className={`navbar-top-wrapper ${sticky ? 'sticky-nav' : ''}`}>
         <div className="navbar-main">
-          {/* Left: Logo/Title */}
-          <div className="nav-logo">
-            {/* The actual image in the screenshot looks like a logo and text.
-                We'll use text here, styled to look like "Cas" */}
+
+          {/* Logo */}
+          <div className="nav-logo" onClick={() => handleNavigate('/')}>
             <span className="logo-text">Cas</span>
           </div>
 
-          {/* Center: Main Navigation Links */}
+          {/* Desktop Links */}
           <div className="nav-links">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#service">SERVICE</a>
-            <a href="#blog">BLOG</a>
-            <a href="#pages">PAGES</a>
-            <a href="#contact">CONTACT</a>
+            <a onClick={() => handleNavigate('/')}>HOME</a>
+            <a onClick={() => handleNavigate('/about-page')}>ABOUT</a>
+            <a onClick={() => handleNavigate('/servicePage')}>SERVICE</a>
+            <a onClick={() => handleNavigate('/gallery-page')}>CATEGORIES</a>
+            <a onClick={() => handleNavigate('/contact')}>CONTACT</a>
           </div>
 
-          {/* Right: Phone Number */}
+          {/* Desktop Phone */}
           <div className="nav-contact-call">
             <FaPhoneAlt className="phone-icon" />
             <span>1-800-915-6271</span>
           </div>
+
+          {/* Mobile Hamburger */}
+          <div className="hamburger" onClick={() => setMenuOpen(true)}>
+            <FaBars />
+          </div>
+
         </div>
       </div>
 
-      {/* Bottom Contact Bar (The one below the main nav, over the background image) */}
-      {/* NOTE: The background image/color needs to be applied to the parent container 
-          or body for the transparency to show the image behind it. */}
-      <div className="navbar-bottom-contact-bar">
-        <div className="contact-item">
-          <FaEnvelope className="contact-icon" />
-          <span className="contact-text">example@email.com</span>
+      {/* Mobile Menu Modal */}
+      {menuOpen && (
+        <div className="mobile-menu-overlay">
+          <div className="mobile-close" onClick={() => setMenuOpen(false)}>
+            <FaTimes />
+          </div>
+
+          <div className="mobile-menu">
+            <a onClick={() => handleNavigate('/')}>HOME</a>
+            <a onClick={() => handleNavigate('/about-page')}>ABOUT</a>
+            <a onClick={() => handleNavigate('/servicePage')}>SERVICE</a>
+            <a onClick={() => handleNavigate('/gallery-page')}>CATEGORIES</a>
+            <a onClick={() => handleNavigate('/contact')}>CONTACT</a>
+
+            <div
+              className="nav-contact-call"
+              style={{ marginTop: '30px' }}
+            >
+              <FaPhoneAlt />
+              <span>1-800-915-6271</span>
+            </div>
+          </div>
         </div>
-        <div className="contact-item">
-          <FaMapMarkerAlt className="contact-icon" />
-          <span className="contact-text">123 Maple Street, Toronto, ON, Canada</span>
-        </div>
-        <div className="contact-item">
-          <FaClock className="contact-icon" />
-          <span className="contact-text">Sun - Thu: Open 24/7</span>
-        </div>
-      </div>
+      )}
     </>
   );
 };
